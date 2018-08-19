@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsp/jstl/fmt" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=US-ASCII"
+		pageEncoding="ISO-8859-1" session="true" />
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+	<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="StyleSheet" href="res/mc.css" type="text/css"
+	media="screen, print" />
+
+<title>Bookstore</title>
+</head>
+<body>
+	<jsp:include page="Header.jsp" />
+	
+	<div class="subnav">
+		<ul>
+			<li><a href="${pageContext.request.contextPath}/?category=All">All</a></li>
+			<li><a href="${pageContext.request.contextPath}/?category=Engineering">Engineering</a></li>
+			<li><a href="${pageContext.request.contextPath}/?category=Fiction">Fiction</a></li>
+			<li><a href="${pageContext.request.contextPath}/?category=History">History</a></li>
+			<li><a href="${pageContext.request.contextPath}/?category=Romance">Romance</a></li>
+			<li><a href="${pageContext.request.contextPath}/?category=Science">Science</a></li>
+			<input type="text" placeholder="Search..."/>
+		</ul>
+	</div>
+	
+	
+	<h2 style="text-align: center">REPORT</h2>
+	
+	<form action="" method="GET">
+		<table class="input_table">
+			<tr>
+				<td colspan="3"> 
+					<select id="admin-month" name="month">
+						<option value="all" selected="selected">All</option>
+					  <option value="jan">January</option>
+					  <option value="feb">February</option>
+					  <option value="mar">March</option>
+					  <option value="apr">April</option>
+					  <option value="may">May</option>
+					  <option value="jun">June</option>
+					  <option value="jul">July</option>
+					  <option value="aug">August</option>
+					  <option value="sep">September</option>
+					  <option value="oct">October</option>
+					  <option value="nov">November</option>
+					  <option value="dec">December</option>
+					</select>		
+					<select id="admin-year" name="year">
+					  <option value="2018">2018</option>
+					  <option value="2017">2017</option>
+					  <option value="2016">2016</option>
+					  <option value="2015">2015</option>
+					</select>		
+				</td>
+			</tr>
+			
+			<tr>
+				<th>
+					Title
+				</th>
+				<th>
+					Price
+				</th>
+				<th>
+					Sold
+				</th>
+			</tr>
+			<c:if test="${not empty booksSold }">
+				
+				<c:forEach var="item" items="${booksSold.values()}">
+					<tr>
+						<td>
+							${item.bookBean.title}
+						</td>
+						<td>
+							${item.bookBean.price}
+						</td>
+						<td>
+							${item.quantity}
+						</td>
+					</tr>
+				</c:forEach>
+			</c:if>
+		</table>
+	</form>
+	
+	<h2 style="text-align: center">Top 10</h2>
+	
+	<table>
+		<tr>
+			<th>
+				Title
+			</th>
+			<th>
+				Price
+			</th>
+			<th>
+				Sold
+			</th>
+		</tr>
+		<c:if test="${not empty booksSold }">
+			<c:forEach var="item" items="${booksSold.values()}">
+				<tr>
+					<td>
+						${item.bookBean.title}
+					</td>
+					<td>
+						${item.bookBean.price}
+					</td>
+					<td>
+						${item.quantity}
+					</td>
+				</tr>
+			</c:forEach>
+		</c:if>
+	</table>
+	
+	
+	
+</body>
+	</html>
+</jsp:root>

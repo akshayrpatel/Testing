@@ -1,0 +1,365 @@
+html {
+	height: 100%;
+}
+
+h2 {
+	font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif; 
+}
+
+p {
+	font-family: Arial, Calibri, Candara, Segoe, Segoe UI, Optima, sans-serif; 
+}
+
+body {
+	margin: 10px;
+}
+
+/* Sub navigation bar */
+div.subnav {
+	font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif; 
+	margin-bottom: 0px;
+	padding-top: 3px;
+	height: 33px;
+	background: #455A64;
+	width: 100%;
+	border: 0px;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	-o-border-radius: 0px;
+}
+
+.subnav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.subnav li {
+	display: inline;
+	float: left;
+	width: 12%;
+	border-right: 1px solid #FFF;
+}
+
+.subnav a {
+	height: 25px;
+}
+
+.subnav a:link, a:visited {
+	font-weight: bold;
+	color: #FFFFFF;
+	display: block;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #455A64;
+	padding: 4px;
+	text-align: center;
+	border: 0px;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	-o-border-radius: 0px;
+}
+
+.subnav a:hover, a:active {
+	background-color: #90A4AE;
+}
+
+.subnav input[type=text] {
+	font-family: Arial;
+	padding: 0 10px;
+	float: left;
+	margin-left: 4%;
+	width: 20%;
+	font-size: 14px;
+	margin-top: 3px;
+}
+
+/* Main navigation bar */
+.navigation {
+	font-family: Calibri;
+	height: 70px;
+	background: #263238;
+}
+
+.nav-container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.logo {
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	padding-left: 20px;
+	margin-top: 10px;
+	float: left;
+	line-height: 70px;
+	text-transform: uppercase;
+	font-size: 1.4em;
+}
+
+.logo a, .logo a:visited {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.brand {
+	position: absolute;
+	padding-left: 20px;
+	float: left;
+	line-height: 70px;
+	text-transform: uppercase;
+	font-size: 1.4em;
+}
+
+.brand a, .brand a:visited {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+nav {
+	float: right;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	float: left;
+	position: relative;
+}
+
+nav ul li a, nav ul li a:visited {
+	display: block;
+	padding: 0 20px;
+	line-height: 70px;
+	background: #263238;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+nav ul li a:hover, nav ul li a:visited:hover {
+	background: #90A4AE;
+	color: #ffffff;
+}
+
+/* Mobile navigation bar*/
+.nav-mobile {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #263238;
+	height: 70px;
+	width: 70px;
+}
+
+@media only screen and (max-width: 800px) {
+	.nav-mobile {
+		display: block;
+	}
+	nav {
+		width: 100%;
+		padding: 70px 0 15px;
+	}
+	nav ul {
+		display: none;
+	}
+	nav ul li {
+		float: none;
+	}
+	nav ul li a {
+		padding: 15px;
+		line-height: 20px;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.nav-list {
+		display: block !important;
+	}
+}
+
+#nav-toggle {
+	position: absolute;
+	left: 18px;
+	top: 22px;
+	cursor: pointer;
+	padding: 10px 35px 16px 0px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	cursor: pointer;
+	border-radius: 1px;
+	height: 5px;
+	width: 35px;
+	background: #ffffff;
+	position: absolute;
+	display: block;
+	content: '';
+	transition: all 300ms ease-in-out;
+}
+
+#nav-toggle span:before {
+	top: -10px;
+}
+
+#nav-toggle span:after {
+	bottom: -10px;
+}
+
+#nav-toggle.active span {
+	background-color: transparent;
+}
+
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+	top: 0;
+}
+
+#nav-toggle.active span:before {
+	transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+	transform: rotate(-45deg);
+}
+
+article {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+/* Book Column */
+* {
+    box-sizing: border-box;
+}
+
+/* Create four columns of equal width */
+.columns {
+    float: left;
+    width: 20%;
+    padding: 8px;
+}
+
+/* Style the list */
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/* Pricing header */
+.price .header {
+    background-color: #111;
+    color: white;
+    font-size: 22px;
+}
+
+/* List items */
+.price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Grey list item */
+.price .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+
+/* The button */
+.button {
+    background-color: #4CAF50;
+    margin: 2px;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.login_column {
+    margin: auto;
+    width: 25%;
+    border: black solid 2px;
+}
+
+#user_details{
+	color: white;
+	padding-top: 26px; 
+	font-family: Arial;
+	font-weight: bold;
+}
+
+table {
+	margin: auto;
+	border: #000000 solid 1px;
+	border-collapse: collapse;
+	padding: 10px;
+	font-family: Tahoma, Geneva, Verdana, sans-serif;
+	background: #EEEEEE;
+	width: auto;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th{
+	background: black;
+	color: white;
+	font-weight: bold;
+}
+
+.input_table:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+}
+
+.button2 {
+    background-color: rgb(51, 130, 194);
+    margin: 2px;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.button2:hover {
+    background-color: rgb(14, 91, 119); /* Green */
+    color: white;
+}
+
+.button3 {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}

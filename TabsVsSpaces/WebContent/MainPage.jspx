@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsp/jstl/fmt" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=US-ASCII"
+		pageEncoding="ISO-8859-1" session="true" />
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+	<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="StyleSheet" href="res/mc.css" type="text/css"
+	media="screen, print" />
+<script type="text/javascript" src="res/mc.js">;</script>
+<title>Bookstore</title>
+</head>
+<body>
+
+	<form action="" method="GET" onsubmit="return validate();">
+		<jsp:include page="Header.jsp" />
+	
+		<div class="subnav">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}/?category=All">All</a></li>
+				<li><a href="${pageContext.request.contextPath}/?category=Engineering">Engineering</a></li>
+				<li><a href="${pageContext.request.contextPath}/?category=Fiction">Fiction</a></li>
+				<li><a href="${pageContext.request.contextPath}/?category=History">History</a></li>
+				<li><a href="${pageContext.request.contextPath}/?category=Romance">Romance</a></li>
+				<li><a href="${pageContext.request.contextPath}/?category=Science">Science</a></li>
+				<input type="text" id="searchInput" onkeyup="searchText()" placeholder="Search title..."/>
+			</ul>
+		</div>
+	
+		<h2 style="text-align: center">${category} Books</h2>
+	
+		<c:if test="${not empty books }">
+			<div id="bookDiv">
+			<c:forEach var="item" items="${books.values()}">
+				<div class="columns">
+					<ul class="price">
+						<li class="header">${item.title}</li>
+						<li class="grey">
+							<img src="${item.coverart}" width="150" height="200" style="padding:10px; display: block; margin-left: auto; margin-right: auto; max-width: 100%; max-height: 100%"/>
+							<br/>
+							$${item.price}
+						</li>
+						<li><a href="${pageContext.request.contextPath}/?book=${item.bid}" class="button">Details</a></li>
+					</ul>
+				</div>
+			</c:forEach>
+			</div>
+		</c:if>
+	</form>
+</body>
+	</html>
+</jsp:root>
